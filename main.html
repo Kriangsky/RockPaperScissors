@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissor Game</title>
+    </head>
+    <body>
+        <h1>Rock Paper Scissor Game :D</h1>
+
+        <button onclick="play('rock')">Rock</button>
+        <button onclick="play('paper')">Paper</button>
+        <button onclick="play('scissor')">Scissor</button>
+
+        <h2 id="result"></h2>
+
+        <script>
+            function play(userChoice){
+                const choice = ['rock', 'paper', 'scissor'];
+                const machineChoice = choice[Math.floor(Math.random() * 3)];
+
+                let result = "";
+
+                if(userChoice === machineChoice){
+                    result = "Tie";
+                } else if (userChoice === "rock"){
+                    if (machineChoice === "scissor"){
+                        result = "you win";
+                    } else {
+                        result = "you lose";
+                    }
+                } else if (userChoice === "paper"){
+                    if (machineChoice === "rock"){
+                        result = "you win";
+                    } else {
+                        result = "you lose";
+                    }
+                } else if (userChoice === "scissor"){
+                    if(machineChoice === "paper"){
+                        result = "you win";
+                    } else {
+                        result = "you lose";
+                    }
+                }
+
+                document.getElementById("result").innerText = `User: ${userChoice}, Computer: ${machineChoice}， result: ${result}`
+            }
+        </script>
+
+
+    </body>
+</html>
